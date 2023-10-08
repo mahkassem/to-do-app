@@ -20,7 +20,7 @@ Build a to-do app.
 ## Prerequisites
 
 - Node.js (v14 LTS or higher)
-- Angular (v16)
+- Next.js (v13+)
 
 ## Run the backend server
 
