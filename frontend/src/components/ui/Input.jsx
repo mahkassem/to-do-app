@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Input = ({ type, onChange, placeholder, label, value, name, id }) => {
+const Input = ({ type, onChange, placeholder, ariaHidden, autoComplete, value, name, id, className }) => {
   return (
 	<input 
 		name={name}
@@ -8,9 +8,10 @@ const Input = ({ type, onChange, placeholder, label, value, name, id }) => {
 		onChange={onChange}
 		type={type}
 		id={id}
+		aria-hidden={ariaHidden}
+		autoComplete={autoComplete}
 		placeholder={placeholder}
-
-		className="border border-zinc-300 focus:border-violet-500 rounded-md py-3 px-4 text-center text-lg text-violet-800 outline-none ease-in-out duration-200"
+		className={`border border-zinc-300 focus:border-violet-500 rounded-md py-3 px-4 text-lg text-violet-800 outline-none ease-in-out duration-200 ${className}`}
 	/>
   )
 }

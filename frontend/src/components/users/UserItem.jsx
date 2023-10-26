@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import React from 'react'
-import Button from '../ui/Button'
+import Link from 'next/link';
 
-const UserItem = ({ avatar, name, username }) => {
+const UserItem = ({ avatar, name, username, userId }) => {
 	return (
 		<div className='bg-zinc-100 p-2 rounded-md border border-zinc-200 hover:border-violet-300 group ease-in-out duration-300 flex items-center justify-between'>
 			<div className="flex items-center gap-x-3">
@@ -19,7 +18,7 @@ const UserItem = ({ avatar, name, username }) => {
 					<span className="text-xs xl:sm text-zinc-400 lowercase">@{username}</span>
 				</div>
 			</div>
-			<Button className='text-sm opacity-0 group-hover:opacity-100 ease-in-out duration-300'>Login</Button>
+			<Link href={`/users/${userId}`} className='px-4 py-2 capitalize font-medium rounded-md bg-violet-600 text-white hover:bg-violet-700 ease-in-out duration-300 text-sm opacity-0 group-hover:opacity-100'>Login</Link>
 		</div>
 	)
 }

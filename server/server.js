@@ -20,16 +20,32 @@ app.get('/users', (req, res) => {
         return safeUser;
     });
     res.send(safeUsers);
-})
+});
+
+// New route to get a single user by ID
+app.get('/users/:id', (req, res) => {
+    const userId = parseInt(req.params.id);
+    const user = users.find(user => user.id === userId);
+
+    if (!user) {
+        res.status(404).send({
+            message: 'User not found'
+        });
+    } else {
+        // Remove the password before sending the user data
+        const { password, ...safeUser } = user;
+        res.send(safeUser);
+    }
+});
 
 app.get('/todos', auth, (req, res) => {
-    const user = res.locals.user
+    const user = res.locals.user;
     const data = toDos.filter(toDo => toDo.user_id === user.id);
     res.send(data);
 });
 
 app.post('/todos', auth, (req, res) => {
-    const user = res.locals.user
+    const user = res.locals.user;
     let newToDo = req.body;
     // get the biggest id and add 1 to it
     newToDo.id = Math.max(...toDos.map(toDo => toDo.id)) + 1;
@@ -82,7 +98,7 @@ function auth(req, res, next) {
 
 // own todo middleware
 function ownToDo(req, res, next) {
-    const user = res.locals.user
+    const user = res.locals.user;
     const id = parseInt(req.params.id);
     const toDo = toDos.find(toDo => toDo.id === id);
     if (!toDo) {

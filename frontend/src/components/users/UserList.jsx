@@ -1,34 +1,14 @@
 import Card from '../ui/Card';
 import UserItem from './UserItem';
 
-const users = [
-	{
-		id: 1,
-		name: "Zucker Ping",
-		avatar: "https://robohash.org/zucker-ping.png",
-		username: "zucker"
-	},
-	{
-		id: 2,
-		name: "Felon Must",
-		avatar: "https://robohash.org/felon-must.png",
-		username: "felon"
-	},
-	{
-		id: 3,
-		name: "Robon Wood",
-		avatar: "https://robohash.org/robon-wood.png",
-		username: "robon"
-	}
-];
-
-const UserList = () => {
+const UserList = ({ userList }) => {
 
 	const usersRender = () => {
 		return (
-			users.map((user) => (
+			userList.map((user) => (
 				<li key={user.id}>
 					<UserItem
+						userId={user.id}
 						name={user.name}
 						username={user.username}
 						avatar={user.avatar}
