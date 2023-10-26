@@ -34,4 +34,4 @@ const Notification = ({ show, data }) => {
 	)
 }
 
-export default memo(Notification)
+export default memo(Notification);
