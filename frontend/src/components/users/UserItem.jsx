@@ -4,7 +4,7 @@ import Button from '../ui/Button'
 
 const UserItem = ({ avatar, name, username }) => {
 	return (
-		<li className='bg-zinc-100 p-2 rounded-md border border-zinc-200 hover:border-violet-300 group ease-in-out duration-300 flex items-center justify-between'>
+		<div className='bg-zinc-100 p-2 rounded-md border border-zinc-200 hover:border-violet-300 group ease-in-out duration-300 flex items-center justify-between'>
 			<div className="flex items-center gap-x-3">
 				<Image
 					src={avatar}
@@ -20,7 +20,7 @@ const UserItem = ({ avatar, name, username }) => {
 				</div>
 			</div>
 			<Button className='text-sm opacity-0 group-hover:opacity-100 ease-in-out duration-300'>Login</Button>
-		</li>
+		</div>
 	)
 }
 

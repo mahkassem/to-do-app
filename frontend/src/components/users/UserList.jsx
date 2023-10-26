@@ -27,12 +27,13 @@ const UserList = () => {
 	const usersRender = () => {
 		return (
 			users.map((user) => (
-				<UserItem
-					key={user.id}
-					name={user.name}
-					username={user.username}
-					avatar={user.avatar}
-				/>
+				<li key={user.id}>
+					<UserItem
+						name={user.name}
+						username={user.username}
+						avatar={user.avatar}
+					/>
+				</li>
 			))
 		)
 	}
