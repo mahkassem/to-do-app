@@ -22,7 +22,11 @@ const User = ({ userData }) => {
 				>
 				<Link href="/users" className='text-blue-600 text-sm font-medium'>Not my account</Link>
 				</UserInfo>
-				<LoginForm username={userData.username} userId={userData.id} />
+				<LoginForm
+					userName={userData.username}
+					userId={userData.id}
+					userAvatar={userData.avatar}
+				/>
 			</Card>
 		</Layout>
 	)
