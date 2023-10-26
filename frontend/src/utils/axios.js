@@ -6,6 +6,6 @@ export const axiosInstance = axios.create({
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-	Authorization: 'Basic enVja2VyOjEyMzQ1Ng=='
+    Authorization: 'Basic enVja2VyOjEyMzQ1Ng==',
   },
 });
