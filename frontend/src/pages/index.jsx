@@ -1,12 +1,26 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Footer from '@/components/Footer';
+import Main from '@/components/Main';
+import Navbar from '@/components/Navbar';
+import UserList from '@/components/users/UserList';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+import Image from 'next/image';
+import { Fragment } from 'react';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
 	return (
-		<main>
-			<h1 className="text-vaiolet-600 text-violet-600 text-xl font-bold text-center capitalize">test tailwind</h1>
-		</main>
+		<Fragment>
+
+			<Navbar />
+
+			<Main className="lg:py-8 xl:py-16">
+				<UserList />
+			</Main>
+
+			<Footer />
+
+		</Fragment>
 	)
 }
